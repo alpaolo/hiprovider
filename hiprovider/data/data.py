@@ -1,39 +1,39 @@
 commodities = [
-    {"id":"1","name":"farina 00","supplier":"1","product":"1"},
-    {"id":"2","name":"uova","supplier":"2","product":"1"},
-    {"id":"3","name":"farina 00","supplier":"3","product":"2"},
-    {"id":"4","name":"zucchero","supplier":"5","product":"1"},
-    {"id":"5","name":"uova","supplier":"4","product":"2"},
-    {"id":"7","name":"farina 000","supplier":"3","product":"3"}
+    {"id":"1","nome":"farina 00","id_fornitore":"1","id_prodotto":"1"},
+    {"id":"2","nome":"uova","id_fornitore":"2","id_prodotto":"1"},
+    {"id":"3","nome":"farina 00","id_fornitore":"3","id_prodotto":"2"},
+    {"id":"4","nome":"zucchero","id_fornitore":"5","id_prodotto":"1"},
+    {"id":"5","nome":"uova","id_fornitore":"4","id_prodotto":"2"},
+    {"id":"7","nome":"farina 000","id_fornitore":"3","id_prodotto":"3"}
     ]
 
 producers = [
-    {"id":"1","name":"Barilla","site":"http:\/\/www.barilla.it","note":'null'},
-    {"id":"4","name":"Bistefani","site":"http:\/\/www.bistefani.it","note":'null'},
-    {"id":"5","name":"Colussi","site":"http:\/\/www.colussi.it","note":'null'}
+    {"id":"1","nome":"Barilla","sito":"http:\/\/www.barilla.it","note":'null'},
+    {"id":"4","nome":"Bistefani","sito":"http:\/\/www.bistefani.it","note":'null'},
+    {"id":"5","nome":"Colussi","sito":"http:\/\/www.colussi.it","note":'null'}
     ]
 
-products = [
-    {"id":"1","article":"Biscottone","producer":"1"},
-    {"id":"2","article":"Goloso","producer":"4"},
-    {"id":"3","article":"Carezze","producer":"5"}
+articles= [
+    {"id":"1","articolo":"Biscottone","id_produttore":"1"},
+    {"id":"2","articolo":"Goloso","id_produttore":"4"},
+    {"id":"3","articolo":"Carezze","id_produttore":"5"}
     ]
 
 
 suppliers = [
-    {"id":"1","name":"Agraria Tornabene Srl","site":"http:\/\/www.tornabene.it","origin":"IT"},
-    {"id":"2","name":"Allevamento Galline Spa","site":"http:\/\/www.algall.it","origin":"IT"},
-    {"id":"3","name":"Az. Agricola Ladispoli","site":"http:\/\/www.ladispoli.it","origin":"IT"},
-    {"id":"4","name":"Uova&Uova","site":"http:\/\/www.biuova.it","origin":"IT"},
-    {"id":"5","name":"Zuccherificio Pasticcio","site":"http:\/\/www.pasticcio.it","origin":"IT"}
+    {"id":"1","nome":"Agraria Tornabene Srl","sito":"http:\/\/www.tornabene.it","origine":"IT"},
+    {"id":"2","nome":"Allevamento Galline Spa","sito":"http:\/\/www.algall.it","origine":"IT"},
+    {"id":"3","nome":"Az. Agricola Ladispoli","sito":"http:\/\/www.ladispoli.it","origine":"IT"},
+    {"id":"4","nome":"Uova&Uova","sito":"http:\/\/www.biuova.it","origine":"IT"},
+    {"id":"5","nome":"Zuccherificio Pasticcio","sito":"http:\/\/www.pasticcio.it","origine":"IT"}
     ]
 
 
 def get_commodities():
     return commodities
 
-def get_products():
-    return products
+def get_articles():
+    return articles
 
 def get_producers():
     return producers

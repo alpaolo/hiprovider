@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings as conf_settings
 from pathlib import Path
-from .data.data import get_commodities, get_producers, get_suppliers, get_products
+from .data.data import get_commodities, get_producers, get_suppliers, get_articles
 
 
 
@@ -46,20 +46,29 @@ def commodities_list(request, name=''): # va tutto spostato in models
     return HttpResponse("\n"+ bytes(result, "utf-8").decode("unicode_escape")) 
 
 def products_list(request, name=''): # va tutto spostato in models
-    args['products'] = get_products()
+    print(name)
+    args['products'] = get_articles()
     args['producers'] = get_producers()
-    args['product']  = get_element(args['products'],name)
-    args['producer'] = get_element(args['producers'], 1)
+    args['commodities'] = get_commodities()
+    args['suppliers'] = get_suppliers()
+    args['product']  = get_element(args['products'], lambda x: x['articolo'].lower() == name)
+    args['producer'] = get_element(args['producers'], lambda x: x['id'] == args['product']['id_produttore'])
+    args['article_commodities'] = get_elements(args['commodities'], lambda x: x['id_prodotto'] == args['product']['id'])
+    print (args['producer'])
     return render(request, 'product_list.html', args)
 
-def get_element(data, value):
-    result = None
-    for items in data:
-        for i in items:
-            if value in items[i].lower():
-                result = items
-                print(items)
-                #result = ""+json.dumps(items, indent = 4)
-                break
-        #[items[x] for x in items]
+
+def get_element(list, filter):
+    for x in list:
+        if filter(x):
+            return x
+    return False
+
+def get_elements(list, filter):
+    result = []
+    for x in list:
+        if filter(x):
+            result.append(x)
     return result
+
+ 
