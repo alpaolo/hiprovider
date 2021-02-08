@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load template_filters %}
+{% block content %}
+
+{% comment %}
+Prodotto: {{ product }}
+<br><hr class="mt-0 mb-4">
+Produttore:  {{ producer }}
+<br><hr class="mt-0 mb-4">
+Ingredienti:  {{ article_ingredients }}
+<br><hr class="mt-0 mb-4">
+Prodotto: {{ product|get_item:'articolo'}}<br>
+Produttore: {{ producer|get_item:'nome'}}<br>
+{% endcomment %}
+<button type="button" class="btn btn-primary">Primary</button>
+<div class='row'>
+<h3>{{ product|get_item:'articolo'|capitalize}} {{ producer|get_item:'nome'|capitalize}}</h3>
+</div>
+<hr class="mt-0 mb-4">
+<ul>
+{% for key,value in product.items %}
+{% if key == "id_produttore" %}
+<li>Produttore:</li><ul> 
+    {% for key,value in producer.items %}
+        <li>{{ key|capitalize }}: {{ value }}</li>
+    {% endfor %}
+</ul>
+{% else  %}
+    <li>{{ key|capitalize }}: {{ value }}</li>
+{% endif %}
+{% endfor %}
+<li><strong>Ingredienti:</strong><ul>
+    {% for item in article_ingredients %}
+        {% with item|get_item:'id_fornitore' as id_fornitore %}    
+        {% with 'id,'|add:id_fornitore as supplier_query %} 
+            <li>{{ item|get_item:'nome'|capitalize }} 
+                <ul> <strong> Fornitore: </strong>
+                    {% with suppliers|get_elements_for_key_value:supplier_query as supplier %} 
+                    {% for key,value in supplier.items %}
+                        <li>{{ key|capitalize }}: {{ value }}</li>
+                    {% endfor %} 
+                    {% endwith %}   
+                </ul>
+            </li>
+        {% endwith %}
+        {% endwith %}
+    {% endfor %}
+    </ul>
+</ul>
+{% endblock content %}
+
+
+

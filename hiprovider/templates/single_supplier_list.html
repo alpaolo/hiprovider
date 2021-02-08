@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load template_filters %}
+{% block content %}
+
+
+
+<div class='row'>
+<h3>{{ supplier|get_item:'nome'|capitalize}} </h3>
+</div>
+<hr class="mt-0 mb-4">
+{% for ingredient in supplier_ingredients %}
+    {{ ingredient|get_item:'nome' }}
+    {% with ingredient|get_item:'id_prodotto' as id_prodotto %}
+    {% with 'id,'|add:id_prodotto as product_query %}
+    {% with products|get_elements_for_key_value:product_query as product %}     
+       Fornitura per {{ product|get_item:'articolo' }}
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    <hr class="mt-0 mb-4">
+{% endfor %}
+
+{% endblock content %}
+
+
+

@@ -10,10 +10,14 @@ from . import views
 
 urlpatterns = [
     path('', lambda request: HttpResponse('Is the hiprovider index page')),
-    path('prodotti/<str:name>', views.products_list, name='productslist'),
-    path('produttori/<str:name>', views.producers_list, name='producerslist'),
-    path('fornitori/<str:name>', views.suppliers_list, name='supplierslist'),
-    path('materieprime/<str:name>', views.commodities_list, name='commoditieslist'),
+    path('prodotti/', views.products_list, name='productslist'),
+    path('prodotti/<str:name>', views.single_product_list, name='single_product'),
+    path('fornitori/', views.suppliers_list, name='suppliers'),
+    path('fornitori/<str:name>', views.single_supplier_list, name='single_supplier'),
+    path('produttori/', views.producers_list, name='producers'),
+    path('produttori/<str:name>', views.single_producer_list, name='single_producer'),
+    path('ingredienti/', views.ingredients_list, name='ingredients'),
+    path('ingredienti/<str:name>', views.single_ingredient_list, name='single_ingredient'),
 
  
     

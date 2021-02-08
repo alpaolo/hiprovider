@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load template_filters %}
+{% block content %}
+
+{% comment %}
+Prodotto: {{ product }}
+<br><hr class="mt-0 mb-4">
+Produttore:  {{ producer }}
+<br><hr class="mt-0 mb-4">
+Ingredienti:  {{ article_ingredients }}
+<br><hr class="mt-0 mb-4">
+Prodotto: {{ product|get_item:'articolo'}}<br>
+Produttore: {{ producer|get_item:'nome'}}<br>
+{% endcomment %}
+
+
+<div class="container-fluid">
+<div class='row'>
+<h3>{{ product|get_item:'articolo'|capitalize}} {{ producer|get_item:'nome'|capitalize}}</h3>
+</div>
+<hr class="mt-0 mb-4">
+<ul>
+<li><strong>Produttore:</strong>
+     <table class="table" style="width: 70%">
+        <tbody>
+                <tr><td> {{ producer|get_item:'nome' }}</td></tr>
+        </tbody>
+    </table>
+<li><strong>Ingredienti:</strong>
+    {% for item in article_ingredients %}
+        {% with item|get_item:'id_fornitore' as id_fornitore %}    
+        {% with 'id,'|add:id_fornitore as supplier_query %}
+        <table class="table" style="width: 70%">
+            <tbody>
+                        {% with suppliers|get_elements_for_key_value:supplier_query as supplier %} 
+                            <tr>
+                                <td style="width: 33%">{{ item|get_item:'nome'|capitalize }}</td><td style="width: 33%"><a href="{% url 'single_supplier' name=supplier|get_item:'nome'|urlizespace %}">{{ supplier|get_item:'nome' }}</a></td><td style="width: 33%">( {{ supplier|get_item:'origine'}} )</td>
+                            </tr>
+                        {% endwith %}
+            </tbody>               
+        </table>
+            
+        {% endwith %}
+        {% endwith %}
+    {% endfor %}
+   
+</ul>
+</div>
+{% endblock content %}
+
+
+

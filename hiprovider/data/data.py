@@ -1,10 +1,10 @@
-commodities = [
+ingredients = [
     {"id":"1","nome":"farina 00","id_fornitore":"1","id_prodotto":"1"},
     {"id":"2","nome":"uova","id_fornitore":"2","id_prodotto":"1"},
     {"id":"3","nome":"farina 00","id_fornitore":"3","id_prodotto":"2"},
-    {"id":"4","nome":"zucchero","id_fornitore":"5","id_prodotto":"1"},
+    {"id":"4","nome":"zucchero","id_fornitore":"3","id_prodotto":"1"},
     {"id":"5","nome":"uova","id_fornitore":"4","id_prodotto":"2"},
-    {"id":"7","nome":"farina 000","id_fornitore":"3","id_prodotto":"3"}
+    {"id":"7","nome":"farina 000","id_fornitore":"5","id_prodotto":"3"}
     ]
 
 producers = [
@@ -29,8 +29,8 @@ suppliers = [
     ]
 
 
-def get_commodities():
-    return commodities
+def get_ingredients():
+    return ingredients
 
 def get_articles():
     return articles
