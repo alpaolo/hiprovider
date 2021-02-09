@@ -3,7 +3,8 @@
 SET man1=%1
 
 git add .
-git rm --cached hiprovider\static\media\*.*
+git rm --cached hiprovider\static\media\*.png
+git rm --cached hiprovider\static\media\*.jpg
 
 git status
 
