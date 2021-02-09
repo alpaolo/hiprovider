@@ -3,6 +3,7 @@
 SET man1=%1
 
 git add .
+git rm --cached hiprovider\static\media\*.*
 
 git status
 
