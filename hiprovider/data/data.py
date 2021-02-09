@@ -1,10 +1,10 @@
 ingredients = [
-    {"id":"1","nome":"farina 00","id_fornitore":"1","id_prodotto":"1"},
-    {"id":"2","nome":"uova","id_fornitore":"2","id_prodotto":"1"},
-    {"id":"3","nome":"farina 00","id_fornitore":"3","id_prodotto":"2"},
-    {"id":"4","nome":"zucchero","id_fornitore":"3","id_prodotto":"1"},
-    {"id":"5","nome":"uova","id_fornitore":"4","id_prodotto":"2"},
-    {"id":"7","nome":"farina 000","id_fornitore":"5","id_prodotto":"3"}
+    {"id":"1","nome":"farina 00","id_fornitore":"1","id_prodotto":"1","semilavorato": False},
+    {"id":"2","nome":"uova","id_fornitore":"2","id_prodotto":"1","semilavorato": False},
+    {"id":"3","nome":"farina 00","id_fornitore":"3","id_prodotto":"2","semilavorato": False},
+    {"id":"4","nome":"zucchero","id_fornitore":"3","id_prodotto":"1","semilavorato": False},
+    {"id":"5","nome":"uova","id_fornitore":"4","id_prodotto":"2","semilavorato": False},
+    {"id":"7","nome":"farina 000","id_fornitore":"5","id_prodotto":"3","semilavorato": False}
     ]
 
 producers = [
@@ -21,11 +21,11 @@ articles= [
 
 
 suppliers = [
-    {"id":"1","nome":"Agraria Tornabene Srl","sito":"http:\/\/www.tornabene.it","origine":"IT"},
-    {"id":"2","nome":"Allevamento Galline Spa","sito":"http:\/\/www.algall.it","origine":"IT"},
-    {"id":"3","nome":"Az. Agricola Ladispoli","sito":"http:\/\/www.ladispoli.it","origine":"IT"},
-    {"id":"4","nome":"Uova&Uova","sito":"http:\/\/www.biuova.it","origine":"IT"},
-    {"id":"5","nome":"Zuccherificio Pasticcio","sito":"http:\/\/www.pasticcio.it","origine":"IT"}
+    {"id":"1","nome":"Agraria Tornabene Srl","sito":"http:\/\/www.tornabene.it","e-mail": "pippo@tim.it","origine":"IT"},
+    {"id":"2","nome":"Allevamento Galline Spa","sito":"http:\/\/www.algall.it","e-mail": "pippo@tim.it","origine":"IT"},
+    {"id":"3","nome":"Az. Agricola Ladispoli","sito":"http:\/\/www.ladispoli.it","e-mail": "pippo@tim.it","origine":"IT"},
+    {"id":"4","nome":"Uova&Uova","sito":"http:\/\/www.biuova.it","e-mail": "pippo@tim.it","origine":"IT"},
+    {"id":"5","nome":"Zuccherificio Pasticcio","sito":"http:\/\/www.pasticcio.it","e-mail": "pippo@tim.it","origine":"IT"}
     ]
 
 

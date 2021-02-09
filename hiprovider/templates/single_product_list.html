@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 {% load template_filters %}
 {% block content %}
@@ -15,7 +16,7 @@ Produttore: {{ producer|get_item:'nome'}}<br>
 {% endcomment %}
 
 
-<div class="container-fluid">
+
 <div class='row'>
 <h3>{{ product|get_item:'articolo'|capitalize}} {{ producer|get_item:'nome'|capitalize}}</h3>
 </div>
@@ -35,7 +36,7 @@ Produttore: {{ producer|get_item:'nome'}}<br>
             <tbody>
                         {% with suppliers|get_elements_for_key_value:supplier_query as supplier %} 
                             <tr>
-                                <td style="width: 33%">{{ item|get_item:'nome'|capitalize }}</td><td style="width: 33%"><a href="{% url 'single_supplier' name=supplier|get_item:'nome'|urlizespace %}">{{ supplier|get_item:'nome' }}</a></td><td style="width: 33%">( {{ supplier|get_item:'origine'}} )</td>
+                                <td style="width: 25%">{{ item|get_item:'nome'|capitalize }}</td><td style="width: 25%"><a href="{% url 'single_supplier' name=supplier|get_item:'nome'|urlizespace %}">{{ supplier|get_item:'nome' }}</a></li</td><td style="width: 25%" >e mail: {{ supplier|get_item:'e-mail' }} </td><td style="width: 33%">( {{ supplier|get_item:'origine'}} )</td>
                             </tr>
                         {% endwith %}
             </tbody>               
@@ -46,7 +47,46 @@ Produttore: {{ producer|get_item:'nome'}}<br>
     {% endfor %}
    
 </ul>
-</div>
+
+
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Button with data-bs-target
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+  </div>
+
+
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{% static 'media/biscottone.png' %}" alt="..." width="100%" height="auto">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ product|get_item:'articolo'|capitalize}} {{ producer|get_item:'nome'|capitalize}}</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+
+
+
+
 {% endblock content %}
 
 
