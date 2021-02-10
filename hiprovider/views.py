@@ -8,7 +8,10 @@ from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings as conf_settings
 from pathlib import Path
-from .data.data import get_ingredients, get_producers, get_suppliers, get_articles
+from .data.ingredients import get_ingredients
+from .data.producers import get_producers
+from .data.articles import  get_articles
+from .data.suppliers import get_suppliers
 
 
 

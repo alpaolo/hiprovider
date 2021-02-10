@@ -1,9 +1,0 @@
-[
-{"id":"1","name":"farina 00","supplier":"1","product":"1"},
-{"id":"2","name":"uova","supplier":"2","product":"1"},
-{"id":"3","name":"farina 00","supplier":"3","product":"2"},
-{"id":"4","name":"zucchero","supplier":"5","product":"1"},
-{"id":"5","name":"uova","supplier":"4","product":"2"},
-{"id":"7","name":"farina 000","supplier":"3","product":"3"}
-]
-
