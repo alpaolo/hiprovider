@@ -68,7 +68,7 @@ ingredients = [
         "nome": "tuorli",
         "id_fornitore": "8",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.gruppomoretti.com/brands/ovoprodotti-professional",
         "semilavorato": False
     },
     {
@@ -76,7 +76,7 @@ ingredients = [
         "nome": "burro",
         "id_fornitore": "9",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.italbutter.it/burro-per-pasticcerie",
         "semilavorato": False
     },
     {
@@ -89,10 +89,10 @@ ingredients = [
     },
     {
         "id": "13",
-        "nome": "farina ",
+        "nome": "farina",
         "id_fornitore": "10",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.farinapetra.it/SCHEDATEC/?permalink=petra-1119",
         "semilavorato": False
     },
     {
@@ -108,7 +108,7 @@ ingredients = [
         "nome": "pasta arancia",
         "id_fornitore": "12",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.disiosrl.it/it/articoli?id=34&n=Mediterraneo",
         "semilavorato": True
     },
     {
@@ -116,7 +116,7 @@ ingredients = [
         "nome": "panna",
         "id_fornitore": "13",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.frascheriprofessionale.it/prodotto/panna-esl-da-montare-per-pasticceria/",
         "semilavorato": False
     },
     {
@@ -132,7 +132,7 @@ ingredients = [
         "nome": "nocciole",
         "id_fornitore": "14",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"http://www.tondagentileprelibata.it/nocciuolo.htm",
         "semilavorato": False
     },
     {
@@ -140,7 +140,7 @@ ingredients = [
         "nome": "mandorle",
         "id_fornitore": "15",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.manuzzisrl.it/catalogo/mandorle-sgusciate-e-pelate-y78",
         "semilavorato": False
     },
     {
@@ -172,7 +172,7 @@ ingredients = [
         "nome": "albume",
         "id_fornitore": "16",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.gruppomoretti.com/brands/ovoprodotti-professional",
         "semilavorato": True
     },
     {
@@ -180,7 +180,7 @@ ingredients = [
         "nome": "latte",
         "id_fornitore": "17",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.sterilgarda.it/latte-e-derivati/latte-uht-sterilgarda-parzialmente-scremato-1500ml/",
         "semilavorato": False
     },
     {
@@ -196,7 +196,7 @@ ingredients = [
         "nome": "amarena candita",
         "id_fornitore": "18",
         "id_prodotto": "4",
-        "scheda":"",
+        "scheda":"https://www.cesarin.it/ita/content/dolcefrutta-professional",
         "semilavorato": True
     }
 ]
