@@ -4,13 +4,13 @@ from django.shortcuts import render
 import os
 import json
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings as conf_settings
 from pathlib import Path
 from .data.ingredients import get_ingredients
 from .data.producers import get_producers
-from .data.articles import  get_articles
+from .data.articles import  get_products
 from .data.suppliers import get_suppliers
 
 
@@ -46,7 +46,7 @@ def suppliers_list(request): #***** va tutto spostato in models e usate le query
 
 def single_supplier_list(request, name=''): #***** va tutto spostato in models e usate le query per non caricare ol data base in memoria
     name = name.replace("_"," ")
-    args['products'] = get_articles()
+    args['products'] = get_products()
     args['producers'] = get_producers()
     args['ingredients'] = get_ingredients()
     args['suppliers'] = get_suppliers()
@@ -71,27 +71,30 @@ def single_ingredient_list(request, name=''): #***** va tutto spostato in models
     return HttpResponse("\n"+ bytes(result, "utf-8").decode("unicode_escape")) 
 
 def products_list(request): #***** va tutto spostato in models e usate le query per non caricare ol data base in memoria
-    args['products'] = get_articles()
+    args['products'] = get_products()
     return render(request, 'products_list.html', args)
 
 
 def single_product_list(request, name=''): #***** va tutto spostato in models e usate le query per non caricare ol data base in memoria
     name = name.replace("_"," ")
-    args['products'] = get_articles()
+    print("name",name)
+    args['products'] = get_products()
     args['producers'] = get_producers()
     args['ingredients'] = get_ingredients()
     args['suppliers'] = get_suppliers()
-    args['product']  = get_element(args['products'], lambda x: x['articolo'].lower() == name)
+    args['product']  = get_element(args['products'], lambda x: x['nome'].lower() == name)
+    print ("id prod",args['product']['id_produttore'])
     args['producer'] = get_element(args['producers'], lambda x: x['id'] == args['product']['id_produttore'])
     args['article_ingredients'] = get_elements(args['ingredients'], lambda x: x['id_prodotto'] == args['product']['id'])
-    return render(request, 'single_product_list.html', args)
+    return JsonResponse({'products':{'product': args['product']}})
+    #return render(request, 'single_product_list.html', args)
 
 
 
 
 def get_element(list, filter):
     for x in list:
-        print (x)
+        print (filter, x)
         if filter(x):
             return x
     return False

@@ -11,7 +11,7 @@ Produttore:  {{ producer }}
 <br><hr class="mt-0 mb-4">
 Ingredienti:  {{ article_ingredients }}
 <br><hr class="mt-0 mb-4">
-Prodotto: {{ product|get_item:'articolo'}}<br>
+Prodotto: {{ product|get_item:'nome'}}<br>
 Produttore: {{ producer|get_item:'nome'}}<br>
 {% endcomment %}
 
@@ -23,7 +23,7 @@ Produttore: {{ producer|get_item:'nome'}}<br>
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{ product|get_item:'articolo'|capitalize}} {{ producer|get_item:'nome'|capitalize}}</h5>
+          <h5 class="card-title">{{ product|get_item:'nome'|capitalize}} {{ producer|get_item:'nome'|capitalize}}</h5>
           <p class="card-text">{{ product|get_item:'note' }}</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>

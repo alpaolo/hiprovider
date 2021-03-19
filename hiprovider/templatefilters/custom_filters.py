@@ -12,6 +12,7 @@ def lower(value):
 
 @register.filter
 def get_item(dictionary, key):
+    print("sss",dictionary, key)
     return dictionary.get(key)
 
 @register.filter
